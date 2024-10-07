@@ -1,4 +1,4 @@
-import {addProduct, updateProduct} from './products/product.service';
+import {addProduct, findProduct, findProducts, updateProduct} from './products/product.service';
 import {faker} from '@faker-js/faker';
 import {products} from './products/product.service';
 
@@ -25,3 +25,9 @@ updateProduct(product.id, {
     title: 'New Title',
     stock: 100,
 });
+
+findProducts({
+    stock: 10,
+    color: 'red',
+    createdAt: new Date(),
+})

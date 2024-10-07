@@ -9,3 +9,6 @@ type Color = Pick<Product, 'color' | 'description'>
 export interface UpdateProductDTO extends Partial<CreateProductDTO> {}; // Partial permite dejar todos los datos como opcionales
 
 export interface example extends Required<Product> {}; // Partial permite dejar todos los datos como obligatorios
+
+// Readonly permite que los datos no sean modificados
+export interface FindProductDTO extends Readonly<Partial<Product>> {}; // Partial permite dejar todos los datos como opcionales

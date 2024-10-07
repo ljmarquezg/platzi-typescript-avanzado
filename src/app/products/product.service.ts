@@ -1,6 +1,6 @@
 import {Product} from './product.model';
 
-import { CreateProductDTO, UpdateProductDTO } from './product.dto';
+import { CreateProductDTO, FindProductDTO, UpdateProductDTO } from './product.dto';
 import { faker } from '@faker-js/faker/.';
 
 export const products: Product[] = [];
@@ -39,6 +39,10 @@ export const deleteProduct = (id: string) => {
     products.splice(index, 1);
 }
 
-export const findProduct = (id: string): Product | undefined => {
+export const findProducts = (data: FindProductDTO): Product[] | undefined => {
+    return products;
+};
+
+export const findProduct = (id: string | number): Product | undefined => {
     return products.find((product: Product) => product.id === id);
 };
